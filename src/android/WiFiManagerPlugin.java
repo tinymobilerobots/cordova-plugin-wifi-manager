@@ -48,7 +48,7 @@ public class WiFiManagerPlugin extends CordovaPlugin {
         else if (action.equals("disconnect"))
             disconnect(args, callbackContext);
         else
-            executeUnknownAction(callbackContext);connect(args, callbackContext);
+            executeUnknownAction(callbackContext);
 
         return true;
     }
