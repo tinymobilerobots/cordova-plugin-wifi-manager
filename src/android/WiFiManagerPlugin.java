@@ -43,16 +43,12 @@ public class WiFiManagerPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        switch (action) {
-            case "connect":
-                connect(args, callbackContext);
-                break;
-            case "disconnect":
-                disconnect(args, callbackContext);
-                break;
-            default:
-                executeUnknownAction(callbackContext);
-        }
+        if (action.equals("connect"))
+            connect(args, callbackContext);
+        else if (action.equals("disconnect"))
+            disconnect(args, callbackContext);
+        else
+            executeUnknownAction(callbackContext);connect(args, callbackContext);
 
         return true;
     }
